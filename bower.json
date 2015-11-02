@@ -1,12 +1,9 @@
 {
-  "name": "shapeshift-api-js",
-  "version": "0.0.0",
-  "homepage": "https://github.com/IdeaByNature/ShapeShiftWrapper",
+  "name": "cloneshift",
+  "version": "0.0.1",
   "authors": [
-    "Vijay Iyer <bitcoinNaChair@gmail.com>"
+    "Anderson Juhasc <anderson.juhasc@gmail.com>"
   ],
-  "main": "widget.js",
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
