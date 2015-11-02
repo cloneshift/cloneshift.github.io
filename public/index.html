@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div ng-app="ss-widget">
+    <!-- .head -->
+    <header class="head">
+        <!-- .wrapper -->
+        <div class="wrapper">
+            <!-- .head-logo -->
+            <a href="/" class="head-logo" title="CloneShift">
+                <img src="assets/img/cloneshift.png" alt="CloneShift" />
+            </a>
+            <!-- /.head-logo -->
+        </div>
+        <!-- /.wrapper -->
+    </header>
+    <!-- /.head -->
+
+    <div ui-view="shapeshift-widget"></div>
+
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="components/qrcode-generator/js/qrcode.js"></script>
+    <script src="components/qrcode-generator/js/qrcode_UTF8.js"></script>
+    <script src="components/angular-qrcode/qrcode.js"></script>
+    <script src="components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="app/shapeshift-api.js"></script>
+    <script src="app/app.js"></script>
+</div>
+</body>
+</html>

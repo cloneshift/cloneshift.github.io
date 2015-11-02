@@ -1,0 +1,38 @@
+<div ng-class="{{class}}">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label>{{ label }}:</label>
+                <!-- .input-group -->
+                <div class="input-group">
+                    <div class="input-group-addon" style="background: none; border: none; padding:0;">
+                        <div class="btn-group" dropdown>
+                            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle style="border-radius: 0;">
+                                {{ selectedCoin }} <span class="caret"></span>
+                           </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li ng-repeat="(k, coin) in coins">
+                                    <a ng-click="getMarketData(coin.symbol)">{{coin.symbol}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <input type="text" ng-model="coinAddress" class="form-control">
+                </div>
+                <!-- /.input-group -->
+            </div>
+            <div ng-show="direction=='out'" class="form-group">
+                <label>Quantidade:</label>
+                <input type="text" ng-model="amount" class="form-control" placeholder="0.00000000" required>
+            </div>
+            <div ng-if="direction=='in'">
+                <div>Limite de deposito: {{marketData.limit}}</div>
+                <div>Deposito Mínimo: {{marketData.minimum}}</div>
+                <div>Taxa do minerador: {{marketData.minerFee}}</div>
+                <div>Cotação: {{marketData.rate}}</div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
