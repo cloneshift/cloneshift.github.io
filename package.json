@@ -1,11 +1,10 @@
 {
-  "name": "Harp-Gulp-And-BrowserSync",
+  "name": "CloneShift",
   "version": "0.0.1",
-  "description": "The dependencies needed for the HGB boilerplate",
+  "description": "",
   "private": true,
   "main": "gulpfile.js",
-  "author": "Charlie Gleason",
-  "license": "ISC",
+  "author": "Anderson Juhasc",
   "devDependencies": {
     "gulp": "^3.8.5",
     "harp": "^0.13.0",
