@@ -1,0 +1,33 @@
+<h1>Angular QR Code</h1><pre><code>&lt;qrcode&gt;&lt;/qrcode&gt;
+</code></pre><p>An AngularJS directive to creates QR Codes using Kazuhiko Arase’s <a href="https://github.com/kazuhikoarase/qrcode-generator">qrcode-generator</a> library.</p>
+<p><a href="http://monospaced.github.io/angular-qrcode">See it in action</a>.</p>
+<h2>Usage</h2><p>as element</p>
+<pre><code>&lt;qrcode data=&quot;string&quot;&gt;&lt;/qrcode&gt;
+</code></pre><p>with QR options</p>
+<pre><code>&lt;qrcode version=&quot;2&quot; error-correction-level=&quot;M&quot; size=&quot;200&quot; data=&quot;string&quot;&gt;&lt;/qrcode&gt;
+</code></pre><p>as a downloadable image</p>
+<pre><code>&lt;qrcode data=&quot;string&quot; download&gt;&lt;/qrcode&gt;
+</code></pre><p>as a link to URL</p>
+<pre><code>&lt;qrcode data=&quot;http://example.com&quot; href=&quot;http://example.com&quot;&gt;&lt;/qrcode&gt;
+</code></pre><p><code>download</code> and <code>href</code> can’t be used on the same element (if <code>download</code> is present, <code>href</code> will be ignored)</p>
+<p>with expressions, observe changes</p>
+<pre><code>&lt;qrcode version=&quot;{{version}}&quot; error-correction-level=&quot;{{level}}&quot; size=&quot;{{size}}&quot; data=&quot;{{var}} href={{var}} download&quot;&gt;&lt;/qrcode&gt;
+</code></pre><h2>Options</h2><p>Permitted values</p>
+<ul>
+<li><p>version: 1-10</p>
+</li>
+<li><p>error-correction-level: &#39;L&#39;, &#39;M&#39;, &#39;Q&#39;, &#39;H&#39;</p>
+</li>
+<li><p>size: integer</p>
+</li>
+<li><p>download: boolean</p>
+</li>
+<li><p>href: URL</p>
+</li>
+</ul>
+<p>The amount of data (measured in bits) must be within capacity according to the selected version and error correction level, see <a href="http://www.qrcode.com/en/about/version.html">http://www.qrcode.com/en/about/version.html</a>.</p>
+<h2>Install</h2><pre><code>bower install monospaced/angular-qrcode
+</code></pre><p>Include the <a href="https://raw.github.com/monospaced/bower-qrcode-generator/master/js/qrcode.js">qrcode generator library</a> and the <code>qrcode.js</code> script provided by this component in your app, and add <code>monospaced.qrcode</code> to your app’s dependencies.</p>
+<h2>Demo</h2><p><a href="http://monospaced.github.io/angular-qrcode">monospaced.github.io/angular-qrcode</a></p>
+<h2>Reference</h2><p><a href="http://www.qrcode.com/en/about/version.html">QR Code versions</a></p>
+<p><a href="http://www.qrcode.com/en/about/error_correction.html">QR Code error correction</a></p>

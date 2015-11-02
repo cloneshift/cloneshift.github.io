@@ -1,0 +1,51 @@
+<h1>angular-bootstrap-dropdown</h1><p>It&#39;s a angular directive for bootstrap dropdown, named &#39;bsDropdown&#39;   </p>
+<p>The bsDropdown include all basic function in dropdown, include set default value, and listen change etc.   </p>
+<p>Also support multi-select on newest version.   </p>
+<p>angular-bootstrap-dropdown dependencies on AngularJS 1.2.x and Bootstrap 3   </p>
+<p>You can see an online demo on <a href="http://frozen-tundra-7264.herokuapp.com/examples/L8/#">here</a>.   </p>
+<h3>Versions</h3><p>0.1.0 support basic function in bsDropdown, include use ng-model to set default value, and ng-change to listen change   </p>
+<p>0.1.1 add bootstrap divider in bsDropdown </p>
+<p>0.2.0 add bootstrap dropdown disabled and item disabled in bsDropdown   </p>
+<p>0.9.0(latest) add multi-select to bsDropdown!!   </p>
+<h3>Development</h3><pre><code>$ git clone https://github.com/AllenFang/angular-bootstrap-dropdown.git
+$ cd angular-practice-example
+$ npm install
+$ bower install
+</code></pre><p>Use gulp to test the bsDropdown</p>
+<pre><code>$ npm test
+or
+$ node_modules/gulp/bin/gulp.js test
+</code></pre><h3>Usage</h3><p>Include the angular-bootstrap-dropdown library to your html page</p>
+<pre><code>&lt;script src=&quot;bsDropdown.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>The <code>bsDropdown.min.js</code> is in the dist folder.
+In the next, include the <code>ng.bs.dropdown</code> to your angular module dependencies  </p>
+<pre><code>angular.module(&quot;demoApp&quot;, [&#39;ng.bs.dropdown&#39;])
+</code></pre><p>Then, you can go to use the angular-bootstrap-dropdown, below is a simple example  </p>
+<p>First of all, give an angular controller</p>
+<pre><code>angular.module(&quot;demoApp&quot;, [&#39;ng.bs.dropdown&#39;])
+    .controller(&quot;YearController&quot;, function($scope){
+        $scope.years = [
+            &quot;2015&quot;,
+            &quot;2014&quot;,
+            &quot;2013&quot;,
+            &quot;2012&quot;,
+            &quot;2011&quot;,
+            &quot;2010&quot;
+        ];
+        $scope.selectYear = $scope.years[2];  //current select item
+
+        /*changeYear function will be called if dropdown change*/
+        $scope.changeYear = function(){
+            console.log(&quot;YearController say... &quot; + $scope.selectYear);
+        }
+    });
+</code></pre><p>So here is your partial html code</p>
+<pre><code>&lt;div ng-controller=&quot;YearController&quot;&gt;
+            &lt;h4&gt;You select {{selectYear}} ....&lt;/h4&gt;&lt;br/&gt;
+            &lt;div bs-dropdown 
+                 bs-dropdown-display=&quot;MyDropDown&quot; 
+                 bs-dropdown-items=&quot;years&quot; 
+                 ng-model=&quot;selectYear&quot; 
+                 ng-change=&quot;changeYear()&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3>Setting</h3><p>Use <code>bs-dropdown-display</code> attribute to display default text on dropdown if there is no any default value selected<br>Use <code>bs-dropdown-items</code> attribute to specify the dropdown options<br>Use <code>ng-model</code> to set the default selected value<br>Use <code>ng-change</code> to listen up the change event on dropdown<br>Use <code>bs-dropdown-divider</code> to specify the divider, for example bs-dropdown-divider=&quot;{{[2,5]}}&quot;.<br>Use <code>bs-dropdown-item-disabled</code> to specify which option should be disabled,for example bs-dropdown-item-disabled=&quot;{{[2,5]}}&quot;.<br>Use <code>bs-dropdown-disabled</code> to set dropdown disabled, for example bs-dropdown-disabled=&quot;true&quot;.<br>Use <code>bs-dropdown-multi</code> to specify bsDropdown to be a multi-select dropdown.   </p>
